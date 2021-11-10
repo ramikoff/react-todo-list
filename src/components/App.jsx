@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import ToDoItem from "./ToDoItem";
 import InputArea from "./InputArea";
-
+import useLocalStorage from "../hooks/useLocalStorage";
 function App() {
-  const [items, setItems] = useState([]);
+  
+  const [items, setItems] = useLocalStorage("items", []);
+
 
   function addItem(inputText) {
     setItems((prevItems) => {
